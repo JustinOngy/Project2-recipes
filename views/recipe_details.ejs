@@ -1,0 +1,66 @@
+<div class="recipe-details_grid">
+  <div class="recipe-details_left-container">
+    <% if (recipe.image_url) { %>
+    <img
+      class="recipe-details_img"
+      src="<%= recipe.image_url %>"
+      alt="<%= recipe.title %>" />
+    <% } %>
+
+    <div class="recipe-details_favourite-conatiner">Add to favourites</div>
+    <div class="recipe-details__star-rating">★ ★ ★ ★ ★</div>
+  </div>
+
+  <div class="recipe-details_middle-container">
+    <h3 class="recipe-details_title"><%= recipe.title %></h3>
+    <h3 class="recipe-details_cook_time">Cook Time:</h3>
+    <p><%= recipe.cook_time %> minutes</p>
+    <div class="recipe-details_serves">
+      <h3>Serves:</h3>
+      <p><%= recipe.serves %> people</p>
+    </div>
+    <br />
+    <div class="recipe-details_ingredients">
+      <h3>Ingredients:</h3>
+      <br />
+      <%= recipe.ingredients %>
+    </div>
+  </div>
+
+  <div class="recipe-details_right-container">
+    <div class="recipe-details_instructions">
+      <h3>Instructions:</h3>
+      <br />
+      <p><%= recipe.instructions %></p>
+    </div>
+  </div>
+</div>
+
+<div class="recipe-details_edit">
+  <a class="button" href="/recipes/<%= recipe.id %>/edit"
+    ><img class="icon" src="/assets/edit.png" alt="" />Edit Recipe</a
+  >
+  <form action="/recipes/<%= recipe.id %>" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <button class="button">
+      <img class="icon" src="/assets/recycle-bin.png" alt="" />Delete Recipe
+    </button>
+  </form>
+</div>
+
+<div class="recommended">
+  <h3>Recommended Recipes</h3>
+  <br />
+  <section class="recipes-list">
+    <% if (recommendedRecipes && recommendedRecipes.length) { %> <% for (let
+    recipe of recommendedRecipes) { %>
+    <p>
+      <a href="/recipes/<%= recipe.id %>">
+        <%= recipe.title %><img src="<%= recipe.image_url %>" />
+      </a>
+    </p>
+    <% } %> <% } else { %>
+    <p>No recommended recipes available.</p>
+    <% } %>
+  </section>
+</div>

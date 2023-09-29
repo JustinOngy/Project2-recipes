@@ -1,0 +1,10 @@
+<section class="recipes-list">
+  <% for (let recipe of recipes){%>
+  <p>
+    <a href="/recipes/<%=recipe.id %>"
+      ><%=recipe.title %><img src="<%= recipe.image_url %>"
+    /></a>
+  </p>
+
+  <%}%>
+</section>

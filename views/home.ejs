@@ -1,0 +1,33 @@
+<div class="landing__container">
+  <div class="image__container">
+    <div class="middle-content">
+      <h2 class="text-black text-3xl font-semibold mb-4">
+        World Wide Flavours with <span class="white">Umo</span>
+        <span class="green">Recipes</span>
+      </h2>
+      <br />
+      <form class="">
+        <input
+          type="text"
+          placeholder="Search for your favourite cusine..."
+          class="input-box" />
+        <button type="submit" class="find-recipe-button">Find Recipe</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<body>
+  <br />
+  <h2 class="title">Recipe <span class="green">Collection</span></h2>
+  <section class="recipes-list">
+    <% for (let recipe of recipes){%>
+    <h4>
+      <a href="/recipes/<%=recipe.id %>"
+        ><%=recipe.title %><img src="<%= recipe.image_url %>"
+      /></a>
+    </h4>
+
+    <%}%>
+  </section>
+</body>

@@ -1,0 +1,57 @@
+<div class="recipe-form">
+  <h2>Edit Recipe</h2>
+
+  <form action="/recipes/<%= recipe.id %>" method="post">
+    <input type="hidden" name="_method" value="put" />
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input name="title" type="text" value="<%= recipe.title%>" id="title" />
+    </div>
+
+    <div class="form-group">
+      <label for="image_url">Image URL</label>
+      <input
+        type="text"
+        name="image_url"
+        value="<%= recipe.image_url%>"
+        id="image_url" />
+    </div>
+
+    <input type="hidden" name="user_id" value="<%= recipe.user_id %>" />
+
+    <div class="form-group">
+      <label for="ingredients">Ingredients</label>
+      <textarea name="ingredients" id="ingredients">
+<%= recipe.ingredients %></textarea
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="instructions">Instructions</label>
+      <textarea name="instructions" id="instructions">
+<%= recipe.instructions %></textarea
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="cook_time">Cook time</label>
+      <input
+        name="cook_time"
+        type="text"
+        value="<%= recipe.cook_time %>"
+        id="cook_time" />
+    </div>
+
+    <div class="form-group">
+      <label for="serves">Serves</label>
+      <input
+        name="serves"
+        type="text"
+        value="<%= recipe.serves %>"
+        id="serves" />
+    </div>
+
+    <button class="share-button">Update</button>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="recipe-form">
+  <h2>Share Recipe</h2>
+
+  <form action="/recipes" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input name="title" type="text" id="title" />
+    </div>
+
+    <div class="form-group">
+      <label for="image_url">Image URL</label>
+      <input name="image_url" type="text" id="image_url" />
+    </div>
+
+    <input type="hidden" name="user_id" value="6" />
+
+    <div class="form-group">
+      <label for="ingredients">Ingredients</label>
+      <textarea name="ingredients" id="ingredients"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="instructions">Instructions</label>
+      <textarea name="instructions" id="instructions"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="cook_time">Cook time</label>
+      <input name="cook_time" type="integer" id="cook_time" />
+    </div>
+
+    <div class="form-group">
+      <label for="serves">Serves</label>
+      <input name="serves" type="integer" id="serves" />
+    </div>
+
+    <button class="share-button">Share</button>
+  </form>
+</div>
